@@ -41,13 +41,15 @@ function ArticlesDisplay() {
          <li className="card mb-3 article">
                 <div className="row g-0">
                     <div className="col-md-2 position-relative">
-                        <img src="article.media && article.media.length > 0 && article.media[0]['media-metadata'] && article.media[0]['media-metadata'].length > 0 ? article.media[0]['media-metadata'][0].url : '' " className="img-fluid rounded-start article-image" alt="Article Image"></img>
+                        <img src={article.media && article.media.length ? article.media[0]['media-metadata'][2].url : 'path_to_default_image.jpg'} 
+            className="img-fluid rounded-start article-image"  
+            alt="img"></img>
               </div>
               <div className="col-md-10">
                 <div className="card-body">
                   <h5 className="card-title"><span>{index + 1})</span> {article.title}</h5>
                   <p className="card-text">${article.abstract}</p>
-                  <small className="text-muted">${new Date(article.published_date).toISOString().split('T')[0]}</small>
+                  <small className="text-muted">{new Date(article.published_date).toISOString().split('T')[0]}</small>
                 </div>
               </div>
             </div>
