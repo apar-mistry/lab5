@@ -28,6 +28,7 @@ function SearchBox() {
                     max="15"
                 />
             </div>
+            <button type="submit" className="btn btn-primary mt-3" >Search</button>
             <div>
                 <label>Sort By:</label>
                 <div className="form-check">
@@ -70,7 +71,6 @@ function SearchBox() {
                     <label htmlFor="month" className="form-check-label">Month</label>
                 </div>
             </div>
-            <button type="submit" className="btn btn-primary mt-3">Search</button>
         </form>
     );
 }

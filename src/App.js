@@ -9,12 +9,21 @@ import ArticlesDisplay from "./component/ArticlesDisplay"; // Ensure the correct
 
 function App() {
 
+  const timePeriodMap = {
+    1: "Day",
+    7: "Week",
+    30: "Month"
+  };
+
+  const timePeriod = timePeriodMap[parseInt(sessionStorage.getItem("timePeriod"))] || "";
+  const searchParam = (sessionStorage.getItem("sortBy") || "").charAt(0).toUpperCase() + (sessionStorage.getItem("sortBy") || "").slice(1);
+  const title = 'Most ' + searchParam + ' - ' + timePeriod || "Most Popular Articles";
 
   return (
     <Container>
       <Row>
         <Col style={{ textAlign: "center" }}>
-          <h1>NYT Most Popular Articles</h1>
+          <h1>{title}</h1>
         </Col>
       </Row>
       <Row>
